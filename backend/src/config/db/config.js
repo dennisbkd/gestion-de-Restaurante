@@ -1,11 +1,12 @@
-import { Sequelize } from 'sequelize'
+import  Sequelize  from 'sequelize'
 
-const sequelize = new Sequelize('Restaurante', 'sa', '1414', {
-  host: '127.0.0.1',
-  dialect: 'mssql',
+const sequelize = new Sequelize('Restaurante', 'sa', 'CObuchan8', {
+   host: "localhost",
+  dialect: "mssql",
   dialectOptions: {
     options: {
-      instanceName: 'SQLEXPRESS'
+      encrypt: true, // Si necesitas encriptación
+      trustServerCertificate: true // Para evitar problemas con certificados
     }
   }
 })
