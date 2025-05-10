@@ -7,4 +7,4 @@ export const db = async () => {
   } catch (error) {
     throw new Error('Error al levantar el servido', error)
   }
-}
+} 
