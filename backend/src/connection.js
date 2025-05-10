@@ -6,5 +6,5 @@ export const db = async () => {
     console.log('base de datos en linea')
   } catch (error) {
     throw new Error('Error al levantar el servido', error)
-  }
+  } 
 } 
