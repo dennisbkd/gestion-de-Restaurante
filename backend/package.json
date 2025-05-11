@@ -11,14 +11,16 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "mysql2": "3.14.0",
     "standard": "17.1.2"
   },
   "eslintConfig": {
     "extends": "standard"
   },
   "dependencies": {
+    "bcrypt": "5.1.1",
     "express": "4.21.2",
-    "sequelize": "6.37.6"
+    "mysql2": "^3.14.0",
+    "sequelize": "6.37.6",
+    "zod": "3.24.4"
   }
 }

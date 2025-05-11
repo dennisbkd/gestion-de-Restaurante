@@ -1,6 +1,8 @@
-import Sequelize from 'sequelize'
+import { Sequelize } from 'sequelize'
 
-export const sequelize = new Sequelize('Restaurante', 'root', 'root', {
-  host: 3000,
+const sequelize = new Sequelize('restaurante', 'root', 'root', {
+  host: 'localhost',
   dialect: 'mysql'
 })
+
+export default sequelize
