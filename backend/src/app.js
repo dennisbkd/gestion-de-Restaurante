@@ -1,17 +1,20 @@
-import express from 'express'
+import express, { json } from 'express'
 import { PORT } from './config/config.js'
 import { db } from './connection.js'
+import { crearAuthRutas } from './routes/auth.js'
 
-const app = express()
+export const CreateApp = async ({ modeloAuth }) => {
+  const app = express()
+  app.use(json())
+  app.get('/', (req, res) => {
+    res.send('servidor en linea')
+  })
 
-app.get('/', (req, res) => {
-  res.send('servidor en linea')
-})
+  db()
 
-db()
+  app.use('/auth', crearAuthRutas({ modeloAuth }))
 
-app.listen(PORT, () => {
-  console.log('servidor activop en el puerto:', PORT)
-})
-
-// localhost:3000/inventario
+  app.listen(PORT, () => {
+    console.log('servidor activop en el puerto:', PORT)
+  })
+}
