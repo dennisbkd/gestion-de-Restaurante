@@ -32,10 +32,8 @@ export class ModeloAuth {
   }
 
   static async registrarEmpleado ({ input }) {
-    
     const { nombreUsuario, nombre, password, correo, telefono, idRol, ci } = input.data
     try {
-      console.log(nombreUsuario)
       const buscarEmpleado = await this.Usuario.findOne({
         where: { nombreUsuario }
       })
@@ -62,11 +60,12 @@ export class ModeloAuth {
           }
         }
       )
-      return { user: {
-        idRol,
-        ci
-      } }
-         }
+      return {
+        user: {
+          idRol,
+          ci
+        }
+      }
     } catch (error) {
       throw new Error(error)
     }

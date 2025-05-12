@@ -43,3 +43,41 @@ export const definicionUsuario = {
     allowNull: false
   }
 }
+
+export const empleado = {
+  idUsuario: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    allowNull: false,
+    references: {
+      model: 'Usuario',
+      key: 'id'
+    }
+  },
+  ci: {
+    type: DataTypes.STRING(7),
+    allowNull: false,
+    unique: true
+  }
+}
+
+export const clienteWeb = {
+  idUsuario: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    allowNull: false,
+    references: {
+      model: 'Usuario',
+      key: 'id'
+    }
+  },
+  puntosFidelidad: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    defaultValue: 0
+  },
+  dirreccion: {
+    type: DataTypes.STRING(200),
+    allowNull: true
+  }
+}

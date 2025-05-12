@@ -15,6 +15,6 @@ export const CreateApp = async ({ modeloAuth }) => {
   app.use('/auth', crearAuthRutas({ modeloAuth }))
 
   app.listen(PORT, () => {
-    console.log('servidor activop en el puerto:', PORT)
+    console.log('servidor activo en el puerto:', PORT)
   })
 }

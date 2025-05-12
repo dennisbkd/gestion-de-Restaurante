@@ -4,13 +4,13 @@ POST http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-    "nombreUsuario" : "ana",
+    "nombreUsuario" : "anaaaaa",
     "nombre" : "bena",
     "password" : "123",
-    "correo" : "bii3eeaa@example.com",
+    "correo" : "biia3aeaeaaa@example.com",
     "telefono" : "12345678",
     "idRol" : 2 ,
-    "ci" : "2134547"
+    "ci" : "8434667"
 }
 ###
 

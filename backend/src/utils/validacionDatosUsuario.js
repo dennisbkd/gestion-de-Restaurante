@@ -11,15 +11,12 @@ export class ValidacionDatosUsuario {
     direccion: z.string(),
     tipoUsuario: z.enum(['cliente', 'empleado', 'administrador']).default('cliente'),
     idRol: z.number().min(1).default(4),
-    idEstado: z.number().min(1).default(3)
-  })
-
-  static ReglasEmpleado = z.object({
+    idEstado: z.number().min(1).default(3),
     ci: z.string().min(7, { message: 'ci incorrecto' })
   })
 
   static registerUser (data) {
-    return this.ReglasUser.refine((data) => data.password === data.confirmarPassword, {
+    return this.ReglasUser.partial((data) => data.password === data.confirmarPassword, {
       message: 'contrasena incorrecta',
       path: ['confirm']
     }).safeParse(data)
@@ -29,7 +26,7 @@ export class ValidacionDatosUsuario {
     return this.ReglasUser.partial().safeParse(user)
   }
 
-  static verificarEmpleado (user) {
-    return this.ReglasEmpleado.refine().safeParse(user)
+  static verificarEmpleado (data) {
+    return this.ReglasUser.partial().safeParse(data)
   }
 }
