@@ -1,0 +1,17 @@
+#PEDIR TODOS LOS PLATOS
+GET http://localhost:3000/platos
+
+# pedir platos con filtro de nombre
+# GET http://localhost:3000/platos?nombre=Lomo_Saltado 
+
+### Probar Login
+# POST http://localhost:3000/platos/login
+# Content-Type: application/json
+
+# {
+#   "email": "usuario@example.com",
+#   "password": "123456"
+# }
+
+
+
