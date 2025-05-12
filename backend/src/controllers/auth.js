@@ -5,7 +5,7 @@ export class ControladorAuth {
     this.ModeloAuth = modeloAuth
   }
 
-  login = async (req, res) => {  
+  login = async (req, res) => {
     const resultado = ValidacionDatosUsuario.loginUser(req.body)
     if (!resultado.success) return res.status(401).json({ error: resultado.error })
     const usuario = await this.ModeloAuth.login({ input: resultado })
